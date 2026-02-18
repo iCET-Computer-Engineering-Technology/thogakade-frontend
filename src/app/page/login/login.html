@@ -1,0 +1,38 @@
+
+
+<div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-neutral-primary to-neutral-primary-soft px-4 py-8">
+    <div class="w-full max-w-sm bg-white p-8 border border-default rounded-lg shadow-lg">
+        <div class="text-center mb-8">
+            <h5 class="text-2xl font-bold text-heading mb-2">Welcome Back</h5>
+            <p class="text-sm text-body">Sign in to your account to continue</p>
+        </div>
+        
+        <form class="space-y-5">
+            <div>
+                <label for="email" class="block mb-2.5 text-sm font-semibold text-heading">Email Address</label>
+                <input type="email" id="email" class="w-full px-4 py-2.5 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent transition-all placeholder:text-body" placeholder="example@company.com" required />
+            </div>
+            
+            <div>
+                <label for="password" class="block mb-2.5 text-sm font-semibold text-heading">Password</label>
+                <input type="password" id="password" class="w-full px-4 py-2.5 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-lg focus:ring-2 focus:ring-brand focus:border-transparent transition-all placeholder:text-body" placeholder="••••••••••" required />
+            </div>
+            
+            <div class="flex items-center justify-between py-2">
+                <div class="flex items-center">
+                    <input id="checkbox-remember" type="checkbox" class="w-4 h-4 border border-default-medium rounded-sm bg-neutral-secondary-medium focus:ring-2 focus:ring-brand cursor-pointer">
+                    <label for="checkbox-remember" class="ms-2 text-sm font-medium text-heading cursor-pointer">Remember me</label>
+                </div>
+                <a href="#" class="text-sm font-medium text-fg-brand hover:text-brand-strong transition-colors">Forgot Password?</a>
+            </div>
+            
+            <button type="button" routerLink="/dashboard" class="w-full py-2.5 px-4 bg-brand text-white font-semibold text-sm rounded-lg hover:bg-brand-strong focus:ring-4 focus:ring-brand-medium focus:outline-none transition-all shadow-md hover:shadow-lg">
+                Sign In
+            </button>
+        </form>
+        
+        <div class="text-center mt-6 pt-6 border-t border-default-medium">
+            <p class="text-sm text-body">Don't have an account? <a href="#" class="font-medium text-fg-brand hover:text-brand-strong transition-colors">Create one now</a></p>
+        </div>
+    </div>
+</div>

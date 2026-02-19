@@ -42,10 +42,13 @@
         <tbody class="divide-y divide-default-medium">
           <tr *ngFor="let customer of customerList" class="hover:bg-neutral-primary-soft transition-all">
             <td class="px-6 py-4 text-sm text-heading font-medium">{{ customer.id }}</td>
-            <td class="px-6 py-4 text-sm text-heading font-medium">{{ customer.name }}</td>
+            <td class="px-6 py-4 text-sm text-heading font-medium">{{ customer.custName }}</td>
             <td class="px-6 py-4 text-sm text-body">{{ customer.title }}</td>
             <td class="px-6 py-4 text-sm text-body">{{ customer.dob }}</td>
             <td class="px-6 py-4 text-sm text-body">{{ customer.address }}</td>
+            <td class="px-6 py-4 text-sm text-body">{{ customer.salary }}</td>
+            <td class="px-6 py-4 text-sm text-body">{{ customer.postalCode }}</td>
+            <td class="px-6 py-4 text-sm text-body">{{ customer.province }}</td>
             <td class="px-6 py-4">
               <div class="flex items-center justify-center gap-2">
                 <button class="inline-flex items-center justify-center w-8 h-8 rounded-lg text-brand bg-brand-soft hover:bg-brand hover:text-white transition-all" title="Edit">

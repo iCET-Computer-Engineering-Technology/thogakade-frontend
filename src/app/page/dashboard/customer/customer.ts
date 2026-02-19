@@ -1,6 +1,7 @@
 import { NgForOf } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { CustomerModel } from '../../../../model/type';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { Component } from '@angular/core';
 })
 export class Customer {
 
-  customerList:any=null;
+  customerList:Array<CustomerModel>= [];
 
   // http://localhost:3306/customer/add
   constructor(private http:HttpClient){
@@ -19,8 +20,7 @@ export class Customer {
   }
 
   getAll(){
-    this.http.get("http://localhost:8080/customer/all").subscribe(data=>{
-      console.log(data);
+    this.http.get<CustomerModel[]>("http://localhost:8080/customer/all").subscribe(data=>{
       this.customerList=data;
     })
   }

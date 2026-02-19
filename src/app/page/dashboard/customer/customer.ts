@@ -51,7 +51,7 @@ export class Customer implements OnInit {
       console.log(data);
       if (data === true) {
         Swal.fire({
-          title: "Good job! "+this.customerObj.name+" saved!",
+          title: "Good job! " + this.customerObj.name + " saved!",
           text: "You clicked the button!",
           icon: "success"
         });
@@ -66,6 +66,34 @@ export class Customer implements OnInit {
       this.customerList = data;
       this.cdr.detectChanges();
     })
+  }
+
+  deleteCustomer(id: string) {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+
+        this.http.delete("http://localhost:8080/customer/delete-by-id/" + id).subscribe(data => {
+          if (data === true) {
+            Swal.fire({
+              title: "Deleted!",
+              text: "Your file has been deleted.",
+              icon: "success"
+            });
+            this.getAll();
+          }
+        })
+
+
+      }
+    });
   }
 
 
